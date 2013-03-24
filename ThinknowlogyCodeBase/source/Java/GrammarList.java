@@ -45,7 +45,7 @@
  *************************************************************************/
 
 class GrammarList extends List
-	{
+{
 	// Private constructible variables
 
 	private boolean needToCheckGrammar_;
@@ -54,127 +54,145 @@ class GrammarList extends List
 	// Constructor
 
 	protected GrammarList( WordItem myWord )
-		{
+	{
 		needToCheckGrammar_ = false;
 		initializeListVariables( Constants.WORD_GRAMMAR_LANGUAGE_LIST_SYMBOL, myWord );
-		}
+	}
 
 
 	// Protected methods
 
 	protected void setOptionEnd()
-		{
+	{
 		boolean found = false;
 		GrammarItem searchItem = firstActiveGrammarItem();
 
-		while( searchItem != null &&
-		!found )
-			{
+		while( searchItem != null && !found )
+		{
 			if( searchItem.hasCurrentCreationSentenceNr() &&
 			searchItem.itemNr() == CommonVariables.currentItemNr )
-				{
+			{
 				found = true;
 				searchItem.isOptionEnd = true;
-				}
+			}
 
 			searchItem = searchItem.nextGrammarItem();
-			}
 		}
+	}
 
 	protected void setChoiceEnd( int choiceEndItemNr )
-		{
+	{
 		boolean found = false;
 		GrammarItem searchItem = firstActiveGrammarItem();
 
-		while( searchItem != null &&
-		!found )
-			{
+		while( searchItem != null && !found )
+		{
 			if( searchItem.hasCurrentCreationSentenceNr() &&
 			searchItem.itemNr() == choiceEndItemNr )
-				{
+			{
 				found = true;
 				searchItem.isChoiceEnd = true;
-				}
+			}
 
 			searchItem = searchItem.nextGrammarItem();
-			}
 		}
+	}
 
 	protected boolean needToCheckGrammar()
-		{
+	{
 		return needToCheckGrammar_;
-		}
+	}
 
 	protected byte checkGrammar()
-		{
+	{
 		short currentWordTypeNr = ( Constants.NUMBER_OF_WORD_TYPES - 1 );
 		GrammarItem currentGrammarItem;
 
 		if( ( currentGrammarItem = firstActiveGrammarItem() ) != null )
-			{
+		{
 			needToCheckGrammar_ = false;
 
-			do	{
+			do  // TODO: Replace this do-while.
+			{
 				if( currentGrammarItem.isDefinitionStart() )
-					{
+				{
 					if( currentGrammarItem.isNewStart() &&
 					!currentGrammarItem.hasGrammarParameter() &&
 					currentGrammarItem.grammarWordTypeNr() <= currentWordTypeNr )
-						{
+					{
 						if( currentGrammarItem.grammarWordTypeNr() < currentWordTypeNr )
-							{
+						{
 							if( currentGrammarItem.grammarWordTypeNr() + 1 == currentWordTypeNr )
-								{
-								if( Presentation.writeInterfaceText( Constants.PRESENTATION_PROMPT_NOTIFICATION, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITION_MISSING_START, currentWordTypeNr, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITION_MISSING_MIDDLE, myWord().anyWordTypeString(), Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITION_MISSING_END ) == Constants.RESULT_OK )
+							{
+								if( Presentation.writeInterfaceText( Constants.PRESENTATION_PROMPT_NOTIFICATION
+																	, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITION_MISSING_START
+																	, currentWordTypeNr
+																	, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITION_MISSING_MIDDLE
+																	, myWord().anyWordTypeString()
+																	, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITION_MISSING_END ) == Constants.RESULT_OK 
+																	)
 									currentWordTypeNr = currentGrammarItem.grammarWordTypeNr();
 								else
 									addError( 1, null, "I failed to write an interface notification" );
-								}
-							else
-								{
-								if( Presentation.writeInterfaceText( Constants.PRESENTATION_PROMPT_NOTIFICATION, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITIONS_MISSING_START, ( currentGrammarItem.grammarWordTypeNr() + 1 ), Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITIONS_MISSING_TO, currentWordTypeNr, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITIONS_MISSING_MIDDLE, myWord().anyWordTypeString(), Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITION_MISSING_END ) == Constants.RESULT_OK )
-									currentWordTypeNr = currentGrammarItem.grammarWordTypeNr();
-								else
-									addError( 1, null, "I failed to write an interface notification" );
-								}
 							}
-
-						currentWordTypeNr--;
+							else
+							{
+								if( Presentation.writeInterfaceText( Constants.PRESENTATION_PROMPT_NOTIFICATION
+																	, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITIONS_MISSING_START
+																	, ( currentGrammarItem.grammarWordTypeNr() + 1 )
+																	, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITIONS_MISSING_TO
+																	, currentWordTypeNr
+																	, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITIONS_MISSING_MIDDLE
+																	, myWord().anyWordTypeString()
+																	, Constants.INTERFACE_GRAMMAR_WORD_TYPE_DEFINITION_MISSING_END ) == Constants.RESULT_OK 
+																	)
+									currentWordTypeNr = currentGrammarItem.grammarWordTypeNr();
+								else
+									addError( 1, null, "I failed to write an interface notification" );
+							}
 						}
 
+						currentWordTypeNr--;
+					}
+
 					if( CommonVariables.result == Constants.RESULT_OK &&
-					currentGrammarItem.hasGrammarParameter() &&
+					 currentGrammarItem.hasGrammarParameter() &&
 					!currentGrammarItem.isGrammarItemInUse &&
 					!currentGrammarItem.isGrammarStart() &&
 					!currentGrammarItem.isPluralNounEnding() )
-						{
-						if( Presentation.writeInterfaceText( Constants.PRESENTATION_PROMPT_NOTIFICATION, Constants.INTERFACE_GRAMMAR_DEFINITION_IS_NOT_USED_START, currentGrammarItem.grammarString(), Constants.INTERFACE_GRAMMAR_DEFINITION_IS_NOT_USED_MIDDLE, myWord().anyWordTypeString(), Constants.INTERFACE_GRAMMAR_DEFINITION_IS_NOT_USED_END ) != Constants.RESULT_OK )
-							addError( 1, null, "I failed to write an interface notification" );
-						}
-					}
-				else
 					{
-					if( currentGrammarItem.definitionGrammarItem == null )
-						return setError( 1, null, "Grammar word \"" + currentGrammarItem.grammarString() + "\" in \"" + myWord().anyWordTypeString() + "\" is used, but not defined" );
+						if( Presentation.writeInterfaceText( Constants.PRESENTATION_PROMPT_NOTIFICATION
+															, Constants.INTERFACE_GRAMMAR_DEFINITION_IS_NOT_USED_START
+															, currentGrammarItem.grammarString()
+															, Constants.INTERFACE_GRAMMAR_DEFINITION_IS_NOT_USED_MIDDLE
+															, myWord().anyWordTypeString()
+															, Constants.INTERFACE_GRAMMAR_DEFINITION_IS_NOT_USED_END ) != Constants.RESULT_OK 
+															)
+							addError( 1, null, "I failed to write an interface notification" );
 					}
 				}
-			while( CommonVariables.result == Constants.RESULT_OK &&
-			( currentGrammarItem = currentGrammarItem.nextGrammarItem() ) != null );
-			}
+				else
+				{
+					if( currentGrammarItem.definitionGrammarItem == null )
+						return setError( 1, null, "Grammar word \"" + currentGrammarItem.grammarString() + "\" in \"" + myWord().anyWordTypeString() + "\" is used, but not defined" );
+				}
+				} while( CommonVariables.result == Constants.RESULT_OK 
+					&& ( currentGrammarItem = currentGrammarItem.nextGrammarItem() ) != null );
+		}
 		else
 			return setError( 1, null, "I couldn't find any grammar item" );
 
 		return CommonVariables.result;
-		}
+	}
 
 	protected byte checkGrammarItemForUsage( GrammarItem unusedGrammarItem )
-		{
+	{
 		GrammarItem searchItem = firstActiveGrammarItem();
 
 		if( unusedGrammarItem != null )
-			{
+		{
 			while( searchItem != null )
-				{
+			{
 				if( searchItem.definitionGrammarItem == unusedGrammarItem )
 					return setError( 1, null, "The definition grammar item is still in use" );
 
@@ -182,101 +200,124 @@ class GrammarList extends List
 					return setError( 1, null, "The next definition grammar item is still in use" );
 
 				searchItem = searchItem.nextGrammarItem();
-				}
 			}
+		}
 		else
 			return setError( 1, null, "The given unused grammar item is undefined" );
 
 		return CommonVariables.result;
-		}
+	}
 
 	protected byte linkLaterDefinedGrammarWords()
-		{
+	{
 		String definitionGrammarString;
 		GrammarItem currentGrammarItem;
 		GrammarItem definitionGrammarItem;
 
 		if( ( definitionGrammarItem = firstActiveGrammarItem() ) != null )
-			{
+		{
 			if( ( definitionGrammarString = definitionGrammarItem.grammarString() ) != null )
-				{
+			{
 				currentGrammarItem = definitionGrammarItem;
 
 				while( ( currentGrammarItem = currentGrammarItem.nextGrammarItem() ) != null )
-					{
+				{
 					if( currentGrammarItem.grammarString() != null )
-						{
+					{
 						if( currentGrammarItem.definitionGrammarItem == null )
-							{
+						{
 							if( !currentGrammarItem.isDefinitionStart() &&
 							definitionGrammarString.equals( currentGrammarItem.grammarString() ) )
-								{
+							{
 								currentGrammarItem.definitionGrammarItem = definitionGrammarItem;
 
 								if( !definitionGrammarItem.hasCurrentCreationSentenceNr() )
 									definitionGrammarItem.isGrammarItemInUse = true;
-								}
-							}
-						else
-							{
-							if( currentGrammarItem.definitionGrammarItem == definitionGrammarItem.nextDefinitionGrammarItem )
-								currentGrammarItem.definitionGrammarItem = definitionGrammarItem;
 							}
 						}
+						else
+						{
+							if( currentGrammarItem.definitionGrammarItem == definitionGrammarItem.nextDefinitionGrammarItem )
+								currentGrammarItem.definitionGrammarItem = definitionGrammarItem;
+						}
+					}
 					else
 						return setError( 1, null, "The grammar string of the grammar definition word is undefined" );
-					}
 				}
+			}
 			else
 				return setError( 1, null, "The grammar string of the grammar definition word is undefined" );
-			}
+		}
 		else
 			return setError( 1, null, "I couldn't find any grammar item" );
 
 		return CommonVariables.result;
-		}
+	}
 
-	protected GrammarResultType createGrammarItem( boolean isDefinitionStart, boolean isNewStart, boolean isOptionStart, boolean isChoiceStart, boolean skipOptionForWriting, short wordTypeNr, short grammarParameter, int grammarStringLength, String grammarString, GrammarItem definitionGrammarItem )
-		{
+	protected GrammarResultType createGrammarItem( boolean isDefinitionStart
+												, boolean isNewStart
+												, boolean isOptionStart
+												, boolean isChoiceStart
+												, boolean skipOptionForWriting
+												, short wordTypeNr
+												, short grammarParameter
+												, int grammarStringLength
+												, String grammarString
+												, GrammarItem definitionGrammarItem 
+												)
+	{
 		GrammarResultType grammarResult = new GrammarResultType();
 
-		if( wordTypeNr >= Constants.WORD_TYPE_UNDEFINED &&
-		wordTypeNr < Constants.NUMBER_OF_WORD_TYPES )
-			{
+		if( wordTypeNr >= Constants.WORD_TYPE_UNDEFINED 
+		&&  wordTypeNr  < Constants.NUMBER_OF_WORD_TYPES )
+		{
 			if( CommonVariables.currentItemNr < Constants.MAX_ITEM_NR )
+			{
+				if( ( grammarResult.createdGrammarItem = new GrammarItem( isDefinitionStart
+																		, isNewStart
+																		, isOptionStart
+																		, isChoiceStart
+																		, skipOptionForWriting
+																		, wordTypeNr
+																		, grammarParameter
+																		, grammarStringLength
+																		, grammarString
+																		, definitionGrammarItem
+																		, this
+																		, myWord() 
+																		) 
+				      ) != null )
 				{
-				if( ( grammarResult.createdGrammarItem = new GrammarItem( isDefinitionStart, isNewStart, isOptionStart, isChoiceStart, skipOptionForWriting, wordTypeNr, grammarParameter, grammarStringLength, grammarString, definitionGrammarItem, this, myWord() ) ) != null )
-					{
 					if( addItemToActiveList( (Item)grammarResult.createdGrammarItem ) == Constants.RESULT_OK )
 						needToCheckGrammar_ = true;
 					else
 						addError( 1, null, "I failed to add a grammar item" );
-					}
+				}
 				else
 					setError( 1, null, "I failed to create a grammar item" );
-				}
+			}
 			else
 				setError( 1, null, "The current item number is undefined" );
-			}
+		}
 		else
 			setError( 1, null, "The given collected word type number is undefined or out of bounds" );
 
 		grammarResult.result = CommonVariables.result;
 		return grammarResult;
-		}
+	}
 
 	protected GrammarResultType findGrammarItem( boolean ignoreValue, short grammarParameter, int grammarStringLength, String grammarString )
-		{
+	{
 		GrammarResultType grammarResult = new GrammarResultType();
 		GrammarItem searchItem = firstActiveGrammarItem();
 
 		if( grammarString != null )
-			{
+		{
 			while( searchItem != null &&
 			grammarResult.foundGrammarItem == null )
-				{
+			{
 				if( searchItem.grammarString() != null )
-					{
+				{
 					if( searchItem.isDefinitionStart() &&
 
 					( ignoreValue ||
@@ -287,20 +328,20 @@ class GrammarList extends List
 						grammarResult.foundGrammarItem = searchItem;
 					else
 						searchItem = searchItem.nextGrammarItem();
-					}
+				}
 				else
 					setError( 1, null, "I found a grammar word without grammar string" );
-				}
 			}
+		}
 		else
 			setError( 1, null, "The given grammar string is undefined" );
 
 		grammarResult.result = CommonVariables.result;
 		return grammarResult;
-		}
+	}
 
 	protected GrammarResultType removeDuplicateGrammarDefinition()
-		{
+	{
 		GrammarResultType grammarResult = new GrammarResultType();
 		boolean isIdentical;
 		String grammarString;
@@ -313,85 +354,86 @@ class GrammarList extends List
 
 		while( searchItem != null &&
 		duplicateDefinitionGrammarItem == null )
-			{
+		{
 			if( searchItem.isDefinitionStart() )
-				{
+			{
 				if( searchItem.hasCurrentCreationSentenceNr() )
 					definitionGrammarItem = searchItem;
 				else
-					{
+				{
 					if( definitionGrammarItem != null &&
 					searchItem.creationSentenceNr() < CommonVariables.currentSentenceNr &&
 					( grammarString = searchItem.grammarString() ) != null &&
 					( definitionGrammarString = definitionGrammarItem.grammarString() ) != null )
-						{
+					{
 						if( definitionGrammarString.equals( grammarString ) )
-							{
+						{
 							searchItem.isGrammarItemInUse = true;
 							duplicateDefinitionGrammarItem = searchItem;
 							definitionGrammarItem.nextDefinitionGrammarItem = searchItem;
-							}
 						}
 					}
 				}
-
-			searchItem = searchItem.nextGrammarItem();
 			}
 
+			searchItem = searchItem.nextGrammarItem();
+		}
+
 		if( definitionGrammarItem != null )
-			{
+		{
 			if( duplicateDefinitionGrammarItem != null )
+			{
+				do  // TODO: Replace this do-while.
 				{
-				do	{
 					isIdentical = true;
 					currentGrammarItem = definitionGrammarItem;
 					duplicateGrammarItem = duplicateDefinitionGrammarItem;
 
-					do	{
+					do // TODO: Replace this do-while.
+					{
 						if( currentGrammarItem.isIdentical( duplicateGrammarItem ) )
-							{
+						{
 							currentGrammarItem = ( currentGrammarItem.nextGrammarItem() != null &&
-													currentGrammarItem.nextGrammarItem().hasCurrentCreationSentenceNr() ? currentGrammarItem.nextGrammarItem() : null );
+												   currentGrammarItem.nextGrammarItem().hasCurrentCreationSentenceNr() 
+											     ? currentGrammarItem.nextGrammarItem() 
+												 : null );
 
 							duplicateGrammarItem = ( duplicateGrammarItem.nextGrammarItem() != null &&
-													duplicateGrammarItem.nextGrammarItem().creationSentenceNr() == duplicateDefinitionGrammarItem.creationSentenceNr() ? duplicateGrammarItem.nextGrammarItem() : null );
-							}
+													 duplicateGrammarItem.nextGrammarItem().creationSentenceNr() == duplicateDefinitionGrammarItem.creationSentenceNr() 
+												   ? duplicateGrammarItem.nextGrammarItem() 
+												   : null );
+						}
 						else
 							isIdentical = false;
-						}
-					while( isIdentical &&
-					currentGrammarItem != null &&
-					duplicateGrammarItem != null );
+					} while( isIdentical && currentGrammarItem != null && duplicateGrammarItem != null ); 
 
-					if( isIdentical &&
-					currentGrammarItem == null &&
-					duplicateGrammarItem == null )
-						{
+					if(    isIdentical && currentGrammarItem == null && duplicateGrammarItem == null )
+					{
 						if( deleteActiveItemsWithCurrentSentenceNr() == Constants.RESULT_OK )
 							grammarResult.foundDuplicateGrammar = true;
 						else
 							addError( 1, null, "I failed to delete a duplicate grammar definition" );
-						}
 					}
-				while( CommonVariables.result == Constants.RESULT_OK &&
-				!grammarResult.foundDuplicateGrammar &&
-				( duplicateDefinitionGrammarItem = duplicateDefinitionGrammarItem.nextDefinitionGrammarItem ) != null );
-				}
+					
+				} while( CommonVariables.result == Constants.RESULT_OK 
+						&& !grammarResult.foundDuplicateGrammar 
+						&& ( duplicateDefinitionGrammarItem = duplicateDefinitionGrammarItem.nextDefinitionGrammarItem ) != null );
 			}
+		}
 		else
 			setError( 1, null, "I couldn't find the last grammar definition word" );
 
 		grammarResult.result = CommonVariables.result;
 		return grammarResult;
-		}
+	}
 
 	protected GrammarItem firstActiveGrammarItem()
-		{
+	{
 		return (GrammarItem)firstActiveItem();
-		}
+	}
 
 	protected GrammarItem startOfGrammar()
-		{
+	{
 		GrammarItem searchItem = firstActiveGrammarItem();
 
 		while( searchItem != null &&
@@ -399,14 +441,14 @@ class GrammarList extends List
 			searchItem = searchItem.nextGrammarItem();
 
 		return searchItem;
-		}
+	}
 
 	protected String wordTypeNameInList( short wordTypeNr )
-		{
+	{
 		GrammarItem searchItem = firstActiveGrammarItem();
 
 		while( searchItem != null )
-			{
+		{
 			if( !searchItem.hasGrammarParameter() &&
 			searchItem.isDefinitionStart() &&
 			searchItem.isNewStart() &&
@@ -414,16 +456,8 @@ class GrammarList extends List
 				return searchItem.grammarString();
 
 			searchItem = searchItem.nextGrammarItem();
-			}
+		}
 
 		return null;
-		}
-	};
-
-/*************************************************************************
- *
- *	"The voice of the Lord echoes above the sea.
- *	The God of glory thunders.
- *	The Lord thunders over the mighty sea." (Psalm 29:3)
- *
- *************************************************************************/
+	}
+};

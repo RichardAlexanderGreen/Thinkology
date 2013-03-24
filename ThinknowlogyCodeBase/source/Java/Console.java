@@ -69,7 +69,7 @@ import javax.swing.JTextField;
 import javax.swing.text.Document;
 
 class Console extends JPanel implements ActionListener, ComponentListener
-	{
+{
 	// Private static constants
 	private static final long serialVersionUID = -2264899695119545018L;
 
@@ -164,37 +164,37 @@ class Console extends JPanel implements ActionListener, ComponentListener
 	// Private non-static methods
 
 	private void resizeFrameComponents( ComponentEvent componentEvent )
-		{
+	{
 		Component component;
 
 		if( componentEvent != null &&
 		( component = componentEvent.getComponent() ) != null )
 			resizeFrame( component.getWidth(), component.getHeight() );
-		}
+	}
 
 
 	// Private static methods
 
 	private static void waitForConsoleToBeReady()
-		{
+	{
 		while( !isConsoleReady_ )
-			{
+		{
 			try {
 				Thread.sleep( Constants.CONSOLE_SLEEP_TIME );
-				}
+			}
 			catch( InterruptedException ie )
-				{
+			{
 				ie.printStackTrace();
-				}
 			}
 		}
+	}
 
 	private static void setSubMenuButtonText()
-		{
+	{
 		if( currentInterfaceLanguageWordItem_ != null )
-			{
+		{
 			switch( currentSubMenu_ )
-				{
+			{
 				case Constants.CONSOLE_SUBMENU_PROGRAMMING_CONNECT4:
 					subMenuButtonArray_[0].setText( currentInterfaceLanguageWordItem_.interfaceString( Constants.INTERFACE_CONSOLE_CONNECT4_MY_SET_IS_A ) );
 					subMenuButtonArray_[1].setText( currentInterfaceLanguageWordItem_.interfaceString( Constants.INTERFACE_CONSOLE_CONNECT4_MY_SET_IS_B ) );
@@ -299,15 +299,15 @@ class Console extends JPanel implements ActionListener, ComponentListener
 
 					nHelpSubMenuButtons_ = 6;
 					break;
-				}
 			}
 		}
+	}
 
 	private static void setInterfaceLanguage()
-		{
+	{
 		if( CommonVariables.currentInterfaceLanguageWordItem != null &&
 		CommonVariables.currentInterfaceLanguageWordItem != currentInterfaceLanguageWordItem_ )
-			{
+		{
 			currentInterfaceLanguageWordItem_ = CommonVariables.currentInterfaceLanguageWordItem;
 			
 			// Upper panel buttons
@@ -346,11 +346,11 @@ class Console extends JPanel implements ActionListener, ComponentListener
 			initialRemarkLabel5_.setText( currentInterfaceLanguageWordItem_.interfaceString( Constants.INTERFACE_CONSOLE_INITIAL_REMARK_LABEL5 ) );
 
 			setSubMenuButtonText();
-			}
 		}
+	}
 
 	private static void enableMenus( boolean enabledNormalButtons, boolean enableSubMenuButtons )
-		{
+	{
 		// Upper menu
 		clearYourMindButton_.setEnabled( enabledNormalButtons );
 		restartButton_.setEnabled( enabledNormalButtons );
@@ -369,24 +369,24 @@ class Console extends JPanel implements ActionListener, ComponentListener
 
 		// Main menu
 		if( currentSubMenu_ == Constants.CONSOLE_SUBMENU_AMBIGUITY )
-			{
+		{
 			readTheFileAmbiguityBostonButton_.setEnabled( isSelectedAmbiguityBoston_ ? false : enabledNormalButtons );
 			readTheFileAmbiguityBostonButton_.setVisible( true );
 
 			readTheFileAmbiguityPresidentsButton_.setEnabled( isSelectedAmbiguityPresidents_ ? false : enabledNormalButtons );
 			readTheFileAmbiguityPresidentsButton_.setVisible( true );
-			}
+		}
 		else
-			{
+		{
 			readTheFileAmbiguityBostonButton_.setVisible( false );
 			readTheFileAmbiguityPresidentsButton_.setVisible( false );
-			}
+		}
 
 		if( currentSubMenu_ == Constants.CONSOLE_SUBMENU_PROGRAMMING ||
 		currentSubMenu_ == Constants.CONSOLE_SUBMENU_PROGRAMMING_CONNECT4 ||
 		currentSubMenu_ == Constants.CONSOLE_SUBMENU_PROGRAMMING_GREETING ||
 		currentSubMenu_ == Constants.CONSOLE_SUBMENU_PROGRAMMING_TOWER_OF_HANOI )
-			{
+		{
 			readTheFileProgrammingConnect4Button_.setEnabled( isSelectedProgrammingConnect4_ ? false : enabledNormalButtons );
 			readTheFileProgrammingConnect4Button_.setVisible( true );
 
@@ -395,13 +395,13 @@ class Console extends JPanel implements ActionListener, ComponentListener
 
 			readTheFileProgrammingTowerOfHanoiButton_.setEnabled( isSelectedProgrammingTowerOfHanoi_ ? false : enabledNormalButtons );
 			readTheFileProgrammingTowerOfHanoiButton_.setVisible( true );
-			}
+		}
 		else
-			{
+		{
 			readTheFileProgrammingConnect4Button_.setVisible( false );
 			readTheFileProgrammingGreetingButton_.setVisible( false );
 			readTheFileProgrammingTowerOfHanoiButton_.setVisible( false );
-			}
+		}
 
 		if( currentSubMenu_ == Constants.CONSOLE_SUBMENU_REASONING ||
 		currentSubMenu_ == Constants.CONSOLE_SUBMENU_REASONING_FAMILY_DEFINITIONS ||
@@ -409,7 +409,7 @@ class Console extends JPanel implements ActionListener, ComponentListener
 		currentSubMenu_ == Constants.CONSOLE_SUBMENU_REASONING_FAMILY_JUSTIFICATION_REPORT ||
 		currentSubMenu_ == Constants.CONSOLE_SUBMENU_REASONING_FAMILY_QUESTIONS ||
 		currentSubMenu_ == Constants.CONSOLE_SUBMENU_REASONING_FAMILY_SHOW_INFO )
-			{
+		{
 			readTheFileReasoningFamilyButton_.setEnabled( isSelectedReasoningFamily_ ? false : enabledNormalButtons );
 			readTheFileReasoningFamilyButton_.setVisible( true );
 
@@ -427,9 +427,9 @@ class Console extends JPanel implements ActionListener, ComponentListener
 
 			familyShowInfoSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_SHOW_INFO ? enabledNormalButtons : false );
 			familyShowInfoSubMenuButton_.setVisible( isSelectedReasoningFamily_ );
-			}
+		}
 		else
-			{
+		{
 			readTheFileReasoningFamilyButton_.setVisible( false );
 
 			familyDefinitionsSubMenuButton_.setVisible( false );
@@ -437,7 +437,7 @@ class Console extends JPanel implements ActionListener, ComponentListener
 			familyJustificationSubMenuButton_.setVisible( false );
 			familyQuestionsSubMenuButton_.setVisible( false );
 			familyShowInfoSubMenuButton_.setVisible( false );
-			}
+		}
 
 		backButton_.setEnabled( enabledNormalButtons );
 		backButton_.setVisible( currentSubMenu_ != Constants.CONSOLE_SUBMENU_INIT && currentSubMenu_ != Constants.CONSOLE_SUBMENU_HELP  );
@@ -446,26 +446,26 @@ class Console extends JPanel implements ActionListener, ComponentListener
 
 		// Sub-menu
 		if( currentSubMenu_ != Constants.CONSOLE_SUBMENU_INIT )
-			{
+		{
 			for( short index = 0; index < Constants.CONSOLE_MAX_SUBMENU_BUTTONS; index++ )
 				subMenuButtonArray_[index].setEnabled( enableSubMenuButtons );
-			}
+		}
 
 		resizeFrame( currentFrameWidth_, currentFrameHeight_ );		// The calculation of the GUI components can go wrong on a slow systems.
 		resizeFrame( currentFrameWidth_, currentFrameHeight_ );		// Another call should solve this problem.
-		}
+	}
 
 	private static void setUpperMenuVisible( boolean isVisible )
-		{
+	{
 		clearYourMindButton_.setVisible( isVisible );
 		restartButton_.setVisible( isVisible );
 		undoButton_.setVisible( isVisible );
 		redoButton_.setVisible( isVisible );
 		selectExampleFile_.setVisible( isVisible );
-		}
+	}
 
 	private static void setSubMenuVisible( boolean skipChangingCurrentSettingSubMenu, short subMenu )
-		{
+	{
 		boolean showInitButtons = false;
 
 		if( !skipChangingCurrentSettingSubMenu )
@@ -474,7 +474,7 @@ class Console extends JPanel implements ActionListener, ComponentListener
 		setSubMenuButtonText();
 
 		switch( subMenu )
-			{
+		{
 			case Constants.CONSOLE_SUBMENU_PROGRAMMING_CONNECT4:
 				nSubMenuButtons_ = nProgrammingConnect4SubMenuButtons_;
 				break;
@@ -510,7 +510,7 @@ class Console extends JPanel implements ActionListener, ComponentListener
 			default:
 				showInitButtons = true;
 				nSubMenuButtons_ = 0;
-			}
+		}
 
 		initialRemarkLabel1_.setVisible( showInitButtons );
 		initialRemarkLabel2_.setVisible( showInitButtons );
@@ -520,10 +520,10 @@ class Console extends JPanel implements ActionListener, ComponentListener
 
 		for( short index = 0; index < Constants.CONSOLE_MAX_SUBMENU_BUTTONS; index++ )
 			subMenuButtonArray_[index].setVisible( index < nSubMenuButtons_ );
-		}
+	}
 
 	private static void resizeFrame( int newFrameWidth, int newFrameHeight )
-		{
+	{
 		int preferredOutputScrollPaneSize;
 
 		currentFrameWidth_ = newFrameWidth;
@@ -536,25 +536,25 @@ class Console extends JPanel implements ActionListener, ComponentListener
 		preferredOutputScrollPaneSize = ( newFrameHeight - ( preferredSubMenuHeight_ + 3 * Constants.CONSOLE_BUTTON_PANE_HEIGHT + 2 * 5 * Constants.CONSOLE_BORDER_SIZE ) );
 
 		if( currentPreferredOutputScrollPaneSize_ != preferredOutputScrollPaneSize )
-			{
+		{
 			outputScrollPane_.setPreferredSize( new Dimension( 0, preferredOutputScrollPaneSize ) );
 			outputScrollPane_.revalidate();
 
 			currentPreferredOutputScrollPaneSize_ = preferredOutputScrollPaneSize;
 
 			if( isConsoleReady_ )
-				{
+			{
 				// Update output area
 				outputArea_.updateUI();
 
 				// Go to end of text in output area
 				outputArea_.setCaretPosition( outputArea_.getDocument().getLength() );
-				}
 			}
 		}
+	}
 
 	private static int lastVisibleSubMenuButtonY()
-		{
+	{
 		int y = 0;
 
 		if( currentSubMenu_ == Constants.CONSOLE_SUBMENU_INIT ||
@@ -564,37 +564,37 @@ class Console extends JPanel implements ActionListener, ComponentListener
 		currentSubMenu_ == Constants.CONSOLE_SUBMENU_REASONING )
 			y = initialRemarkLabel5_.getY();
 		else
-			{
+		{
 			if( nSubMenuButtons_ > 0 )
 				y = subMenuButtonArray_[nSubMenuButtons_ - 1].getY();
-			}
-
-		return Constants.CONSOLE_BUTTON_PANE_HEIGHT + y;
 		}
 
+		return Constants.CONSOLE_BUTTON_PANE_HEIGHT + y;
+	}
+
 	private static String getInputString()
-		{
+	{
 		inputString_ = null;
 
-		do	{
+		do{
 			try {
 				Thread.sleep( Constants.CONSOLE_SLEEP_TIME );
-				}
-			catch( InterruptedException ie )
-				{
-				ie.printStackTrace();
-				}
 			}
+			catch( InterruptedException ie )
+			{
+				ie.printStackTrace();
+			}
+		}
 		while( inputString_ == null );
 
 		return inputString_;
-		}
+	}
 
 
 	// Constructor
 
 	public Console( Dimension frameSize )
-		{
+	{
 		super( new GridBagLayout() );
 
 		// Create output area
@@ -821,13 +821,13 @@ class Console extends JPanel implements ActionListener, ComponentListener
 		add( mainMenuPanel_, remainderOrientedConstraints );
 		add( subMenuPanel_, remainderOrientedConstraints );
 		add( inputPanel_, remainderOrientedConstraints );
-		}
+	}
 
 
 	// Protected static methods
 
 	protected static void restart()
-		{
+	{
 		// Initialize private static variables
 		isSelectedAmbiguityBoston_ = false;
 		isSelectedAmbiguityPresidents_ = false;
@@ -867,61 +867,61 @@ class Console extends JPanel implements ActionListener, ComponentListener
 
 		// Disable input field
 		inputField_.setEnabled( false );
-		}
+	}
 
 	protected static void writeText( String textString )
-		{
+	{
 		Document document;
 
 		waitForConsoleToBeReady();
 
 		if( textString != null )
-			{
+		{
 				// Show text in output area
 				outputArea_.append( textString );
 
 				if( ( document = outputArea_.getDocument() ) != null )
 					// Go to end of text in output area
 					outputArea_.setCaretPosition( document.getLength() );
-			}
+		}
 		else
-			{
+		{
 			addError( "Class Console;\nMethod: writeText;\nError: The given text string is undefined." );
 			showError();
-			}
 		}
+	}
 
 	protected static void showStatus( String newStatusString )
-		{
+	{
 		if( statusLabel_ != null )
 			statusLabel_.setText( newStatusString == null ? Constants.EMPTY_STRING : newStatusString );
-		}
+	}
 
 	protected static void startProgress( int startProgress, int maxProgress, String progressString )
-		{
+	{
 		progressBar_.setValue( startProgress );
 		progressBar_.setMaximum( maxProgress );
 
 		showStatus( progressString );
 		setUpperMenuVisible( false );
 		progressBar_.setVisible( true );
-		}
+	}
 
 	protected static void showProgress( int currentProgress )
-		{
+	{
 		progressBar_.setValue( currentProgress );
-		}
+	}
 
 	protected static void clearProgress()
-		{
+	{
 		progressBar_.setVisible( false );
 		showStatus( null );
-		}
+	}
 
-protected static void showError()
-		{
+	protected static void showError()
+	{
 		if( errorStringBuffer_ != null )
-			{
+		{
 			JTextArea errorTextArea = new JTextArea( errorStringBuffer_.toString() );
 			errorTextArea.setEditable( false );
 			JScrollPane errorScrollPane = new JScrollPane( errorTextArea );
@@ -929,25 +929,25 @@ protected static void showError()
 			JOptionPane.showMessageDialog( null, errorScrollPane, ( errorHeaderString_ == null ? Constants.PRESENTATION_ERROR_INTERNAL_TITLE_STRING : Constants.PRESENTATION_ERROR_INTERNAL_TITLE_STRING + errorHeaderString_ ), JOptionPane.ERROR_MESSAGE );
 			errorHeaderString_ = null;
 			errorStringBuffer_ = null;
-			}
 		}
+	}
 
 	protected static void addError( String newErrorString )
-		{
+	{
 		if( errorStringBuffer_ == null )
 			errorStringBuffer_ = new StringBuffer( newErrorString );
 		else
 			errorStringBuffer_.append( newErrorString ); 
-		}
+	}
 
 	protected static void addError( String newHeaderString, String newErrorString )
-		{
+	{
 		errorHeaderString_ = new String( newHeaderString );
 		addError( newErrorString ); 
-		}
+	}
 
 	protected static String getPassword()
-		{
+	{
 		if( errorStringBuffer_ != null )
 			showError();
 
@@ -964,10 +964,10 @@ protected static void showError()
 		passwordField_.setVisible( false );
 
 		return inputString_;
-		}
+	}
 
 	protected static String readLine( boolean clearInputField )
-		{
+	{
 		if( errorStringBuffer_ != null )
 			showError();
 
@@ -981,7 +981,7 @@ protected static void showError()
 		if( clearInputField )
 			inputField_.setText( Constants.EMPTY_STRING );
 		else
-			{
+		{
 			// Set upper menu visible
 			setUpperMenuVisible( true );
 
@@ -990,7 +990,7 @@ protected static void showError()
 
 			// Select all text in input field
 			inputField_.selectAll();
-			}
+		}
 
 		inputString_ = getInputString();
 
@@ -998,54 +998,56 @@ protected static void showError()
 		inputField_.setEnabled( false );
 
 		return inputString_;
-		}
+	}
 
 
 	// Public non-static methods
 
 	public void componentHidden( ComponentEvent componentEvent )
-		{
-		}
+	{
+	}
 
 	public void componentMoved( ComponentEvent componentEvent )
-		{
+	{
 		resizeFrameComponents( componentEvent );
-		}
+	}
 
 	public void componentResized( ComponentEvent componentEvent )
-		{
+	{
 		resizeFrameComponents( componentEvent );
-		}
+	}
 
 	public void componentShown( ComponentEvent componentEvent )
-		{
+	{
 		isConsoleReady_ = true;
-		}
+	}
 
 	public void actionPerformed( ActionEvent actionEvent )
-		{
+	{
 		Object actionSource;
 		String actionCommandString;
 
 		if( currentInterfaceLanguageWordItem_ != null )
-			{
+		{
+			// TODO: MAKE THIS A CASE STATEMENT.
+			
 			if( ( actionSource = actionEvent.getSource() ) != null )
-				{
+			{
 				if( ( actionCommandString = actionEvent.getActionCommand() ) != null )
-					{
+				{
 					// Disable menus during action
 					enableMenus( false, false );
 			
 					if( actionSource == passwordField_ )
 						inputString_ = String.valueOf( passwordField_.getPassword() );
 					else
-						{
+					{
 						if( actionSource == inputField_ )
 							inputString_ = inputField_.getText();
 						else
-							{
+						{
 							if( actionSource == clearYourMindButton_ )
-								{
+							{
 								isSelectedAmbiguityBoston_ = false;
 								isSelectedAmbiguityPresidents_ = false;
 								isSelectedProgrammingConnect4_ = false;
@@ -1056,150 +1058,149 @@ protected static void showError()
 								setSubMenuVisible( true, Constants.CONSOLE_SUBMENU_INIT );
 
 								inputString_ = actionCommandString;
-								}
+							}
 							else
-								{
+							{
 								if( actionSource == restartButton_ )
-									{
+								{
 									inputString_ = actionCommandString;
 									restart();
-									}
+								}
 								else
-									{
+								{
 									if( actionSource == selectExampleFile_ )
-										{
+									{
 										if( fileChooser_.showOpenDialog( this ) == JFileChooser.APPROVE_OPTION &&
 										fileChooser_.getSelectedFile() != null &&
 										fileChooser_.getSelectedFile().getPath() != null )
 											inputString_ = Presentation.convertDiacriticalText( currentInterfaceLanguageWordItem_.interfaceString( Constants.INTERFACE_CONSOLE_READ_FILE_ACTION_START ) ) + fileChooser_.getSelectedFile().getPath() + Presentation.convertDiacriticalText( currentInterfaceLanguageWordItem_.interfaceString( Constants.INTERFACE_CONSOLE_READ_FILE_ACTION_END ) );
 										else
-											{
+										{
 											// When canceled
 											enableMenus( true, true );
 		
 											inputField_.setEnabled( true );
 											inputField_.requestFocus();
-											}
 										}
+									}
 									else
-										{
+									{
 										if( actionSource == ambiguitySubMenuButton_ )
-											{
+										{
 											setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_AMBIGUITY );
 											enableMenus( true, true );
-											}
+										}
 										else
-											{
+										{
 											if( actionSource == readTheFileAmbiguityBostonButton_ )
-												{
+											{
 												isSelectedAmbiguityBoston_ = true;
 												inputString_ = actionCommandString;
-												}
+											}
 											else
-												{
+											{
 												if( actionSource == readTheFileAmbiguityPresidentsButton_ )
-													{
+												{
 													isSelectedAmbiguityPresidents_ = true;
 													inputString_ = actionCommandString;
-													}
+												}
 												else
-													{
+												{
 													if( actionSource == programmingSubMenuButton_ )
-														{
+													{
 														setSubMenuVisible( false, ( isSelectedProgrammingConnect4_ ? Constants.CONSOLE_SUBMENU_PROGRAMMING_CONNECT4 : Constants.CONSOLE_SUBMENU_PROGRAMMING ) );
 														enableMenus( true, true );
-														}
+													}
 													else
-														{
+													{
 														if( actionSource == readTheFileProgrammingConnect4Button_ )
-															{
+														{
 															isSelectedProgrammingConnect4_ = true;
 															setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_PROGRAMMING_CONNECT4 );
 															inputString_ = actionCommandString;
-															}
+														}
 														else
-															{
+														{
 															if( actionSource == readTheFileProgrammingGreetingButton_ )
-																{
+															{
 																isSelectedProgrammingGreeting_ = true;
 																setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_PROGRAMMING_GREETING );
 																inputString_ = actionCommandString;
-																}
+															}
 															else
-																{
+															{
 																if( actionSource == readTheFileProgrammingTowerOfHanoiButton_ )
-																	{
+																{
 																	isSelectedProgrammingTowerOfHanoi_ = true;
 																	setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_PROGRAMMING_TOWER_OF_HANOI );
 																	inputString_ = actionCommandString;
-																	}
+																}
 																else
-																	{
+																{
 																	if( actionSource == reasoningSubMenuButton_ )
-																		{
+																	{
 																		setSubMenuVisible( false, ( isSelectedReasoningFamily_ ? Constants.CONSOLE_SUBMENU_REASONING_FAMILY_DEFINITIONS : Constants.CONSOLE_SUBMENU_REASONING ) );
 																		enableMenus( true, true );
-																		}
+																	}
 																	else
-																		{
+																	{
 																		if( actionSource == readTheFileReasoningFamilyButton_ )
-																			{
+																		{
 																			isSelectedReasoningFamily_ = true;
 																			setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_REASONING_FAMILY_DEFINITIONS );
 																			inputString_ = actionCommandString;
-																			}
+																		}
 																		else
-																			{
+																		{
 																			if( actionSource == familyDefinitionsSubMenuButton_ )
-																				{
+																			{
 																				setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_REASONING_FAMILY_DEFINITIONS );
 																				enableMenus( true, true );
-																				}
+																			}
 																			else
-																				{
+																			{
 																				if( actionSource == familyConflictsSubMenuButton_ )
-																					{
+																				{
 																					setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_REASONING_FAMILY_CONFLICTS );
 																					enableMenus( true, true );
-																					}
+																				}
 																				else
-																					{
+																				{
 																					if( actionSource == familyJustificationSubMenuButton_ )
-																						{
+																					{
 																						setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_REASONING_FAMILY_JUSTIFICATION_REPORT );
 																						enableMenus( true, true );
-																						}
+																					}
 																					else
-																						{
+																					{
 																						if( actionSource == familyQuestionsSubMenuButton_ )
-																							{
+																						{
 																							setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_REASONING_FAMILY_QUESTIONS );
 																							enableMenus( true, true );
-																							}
+																						}
 																						else
-																							{
+																						{
 																							if( actionSource == familyShowInfoSubMenuButton_ )
-																								{
+																							{
 																								setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_REASONING_FAMILY_SHOW_INFO );
 																								enableMenus( true, true );
-																								}
+																							}
 																							else
-																								{
+																							{
 																								if( actionSource == backButton_ )
-																									{
+																								{
 																									setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_INIT );
 																									enableMenus( true, true );
-																									}
+																								}
 																								else
-																									{
+																								{
 																									if( actionSource == helpButton_ )
-																										{
+																									{
 																										setSubMenuVisible( false, Constants.CONSOLE_SUBMENU_HELP );
 																										inputString_ = currentInterfaceLanguageWordItem_.interfaceString( Constants.INTERFACE_CONSOLE_HELP );
-																										}
+																									}
 																									else
 																										inputString_ = actionCommandString;
-																									}
 																								}
 																							}
 																						}
@@ -1218,42 +1219,34 @@ protected static void showError()
 									}
 								}
 							}
+						}
 
 						if( inputString_ != null )
-							{
+						{
 							if( actionSource != inputField_ )
 								inputField_.setText( inputString_ );
 			
 							if( actionSource != restartButton_ )
 								writeText( inputString_ + Constants.NEW_LINE_STRING );
-							}
 						}
 					}
+				}
 				else
-					{
+				{
 					addError( "Class Console;\nMethod: actionPerformed;\nError: The action command string is undefined." );
 					showError();
-					}
 				}
+			}
 			else
-				{
+			{
 				addError( "Class Console;\nMethod: actionPerformed;\nError: The action source is undefined." );
 				showError();
-				}
-			}
-		else
-			{
-			addError( "Class Console;\nMethod: actionPerformed;\nError: The current interface language word is undefined." );
-			showError();
 			}
 		}
-	};
-
-/*************************************************************************
- *
- *	"I will love the Lord because he hears my voice
- *	and my prayer for mercy.
- *	Because he bends down to listen,
- *	I will pray as long as I breath!" (Psalm 116:1-2)
- *
- *************************************************************************/
+		else
+		{
+			addError( "Class Console;\nMethod: actionPerformed;\nError: The current interface language word is undefined." );
+			showError();
+		}
+	}
+};

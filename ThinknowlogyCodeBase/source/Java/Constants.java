@@ -880,10 +880,3 @@ class Constants
 	protected static final short	INTERFACE_SENTENCE_ERROR_GRAMMAR_INTEGRITY_I_RETRIEVED_FROM_MY_SYSTEM =		1423;
 	protected static final short	INTERFACE_SENTENCE_ERROR_GRAMMAR_INTEGRITY_SENTENCE_END =					1424;
 	};
-
-/*************************************************************************
- *
- *	"He will bless those who fear the Lord,
- *	both great and lowly." (Psalm 115:13)
- *
- *************************************************************************/
