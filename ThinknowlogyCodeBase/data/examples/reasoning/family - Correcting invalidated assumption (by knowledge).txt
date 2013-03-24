@@ -1,0 +1,6 @@
+Read the file "reasoning/family".
+Is John the mother of Paul?
+Show the justification-report for John.
+John is the father of Paul, Joe and Laura.
+Show the justification-report for John.
+# Remember to clear this knowledge before reading another example.

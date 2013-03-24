@@ -1,0 +1,6 @@
+Read the file "reasoning/family".
+Laura is a daughter.
+Joe is a son.
+Paul is a son.
+John is the father and Ann is the mother of Paul, Joe and Laura.
+# Remember to clear this knowledge before reading another example.

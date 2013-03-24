@@ -1,0 +1,4 @@
+Read the file "reasoning/family".
+John is the father of Paul, Joe and Laura.
+# Remember to clear this knowledge before reading another example.
+John is not a father.

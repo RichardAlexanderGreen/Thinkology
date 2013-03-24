@@ -1,0 +1,5 @@
+Read the file "reasoning/family".
+Chris is a father or a mother.
+Chris is a father.
+Is Chris a man and a woman?
+# Remember to clear this knowledge before reading another example.

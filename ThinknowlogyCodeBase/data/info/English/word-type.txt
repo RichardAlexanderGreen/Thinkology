@@ -1,0 +1,71 @@
+#
+#	File:		wordType.txt
+#	Scope:		Used by the Thinknowlogy application
+#	Purpose:	To show the word type information in the English language
+#	Version:	Thinknowlogy 2012 (release 2)
+#----------------------------------------------------------------------------
+#	Thinknowlogy is grammar-based software,
+#	designed to utilize the intelligence contained within grammar,
+#	in order to create intelligence through natural language in software,
+#	which is demonstrated by:
+#	- Programming in natural language;
+#	- Reasoning in natural language:
+#		- drawing conclusions,
+#		- making assumptions (with self-adjusting level of uncertainty),
+#		- asking questions about gaps in the knowledge,
+#		- detecting conflicts in the knowledge;
+#	- Detection of semantic ambiguity (static as well as dynamic);
+#	- Intelligent answering of "is" questions (by providing alternatives).
+#----------------------------------------------------------------------------
+#	Copyright (C) 2009-2012, Menno Mafait
+#
+#	Your additions, modifications, suggestions and bug reports
+#	are welcome at http://mafait.org
+#----------------------------------------------------------------------------
+#	This program is free software: you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation, either version 2 of the License, or
+#	(at your option) any later version.
+#
+#	This program is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License along
+#	with this program; if not, write to the Free Software Foundation, Inc.,
+#	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#----------------------------------------------------------------------------
+
+"-----------------------------------------------------------------------------".
+"Total number of word types:\t~#<w>~.".
+"-----------------------------------------------------------------------------".
+" * Active word types:\t\t\t~!#<w>~.".
+"   (@1)  Symbols:\t\t\t\t~!#<w>@1~.".
+"   (@2)  Numerals:\t\t\t\t~!#<w>@2~.".
+"   (@3)  Small letters:\t\t\t~!#<w>@3~.".
+"   (@4)  Capital letters:\t\t\t~!#<w>@4~.".
+"   (@5)  Propernames:\t\t\t\t~!#<w>@5~.".
+"   (@6)  Adjectives:\t\t\t\t~!#<w>@6~.".
+"   (@7)  Adverbs:\t\t\t\t~!#<w>@7~.".
+"   (@8)  Answer words:\t\t\t~!#<w>@8~.".
+"   (@9)  Articles:\t\t\t\t~!#<w>@9~.".
+"   (@10) Conjunctions:\t\t\t~!#<w>@10~.".
+"   (@11) Singular nouns:\t\t\t~!#<w>@11~.".
+"   (@12) Plural nouns:\t\t\t~!#<w>@12~.".
+"   (@13) Singular personal pronouns 1:\t~!#<w>@13~.".
+"   (@14) Singular personal pronouns 2:\t~!#<w>@14~.".
+"   (@15) Singular possessive pronouns 1:\t~!#<w>@15~.".
+"   (@16) Singular possessive pronouns 2:\t~!#<w>@16~.".
+"   (@17) Plural personal pronouns 1:\t\t~!#<w>@17~.".
+"   (@18) Plural personal pronouns 2:\t\t~!#<w>@18~.".
+"   (@19) Plural possessive pronouns 1:\t~!#<w>@19~.".
+"   (@20) Plural possessive pronouns 2:\t~!#<w>@20~.".
+"   (@21) Prepositions:\t\t\t~!#<w>@21~.".
+"   (@22) Singular verbs:\t\t\t~!#<w>@22~.".
+"   (@23) Plural verbs:\t\t\t~!#<w>@23~.".
+"   (@24) Selection words:\t\t\t~!#<w>@24~.".
+" * Deactive word types:\t\t~*#<w>~.".
+" * Archived word types:\t\t~$#<w>~.".
+" * Deleted word types:\t\t~&#<w>~.".
+"-----------------------------------------------------------------------------".

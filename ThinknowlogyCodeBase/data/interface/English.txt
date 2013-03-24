@@ -1,0 +1,316 @@
+#
+#	File:		English.txt
+#	Scope:	Used by the Thinknowlogy application
+#	Purpose:	To define the interface feed-back in the English language.
+#	Version:	Thinknowlogy 2012 (release 2)
+#----------------------------------------------------------------------------
+#	Thinknowlogy is grammar-based software,
+#	designed to utilize the intelligence contained within grammar,
+#	in order to create intelligence through natural language in software,
+#	which is demonstrated by:
+#	- Programming in natural language;
+#	- Reasoning in natural language:
+#		- drawing conclusions,
+#		- making assumptions (with self-adjusting level of uncertainty),
+#		- asking questions about gaps in the knowledge,
+#		- detecting conflicts in the knowledge;
+#	- Detection of semantic ambiguity (static as well as dynamic);
+#	- Intelligent answering of "is" questions (by providing alternatives).
+#----------------------------------------------------------------------------
+#	Copyright (C) 2009-2012, Menno Mafait
+#
+#	Your additions, modifications, suggestions and bug reports
+#	are welcome at http://mafait.org
+#----------------------------------------------------------------------------
+#	This program is free software: you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation, either version 2 of the License, or
+#	(at your option) any later version.
+#
+#	This program is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License along
+#	with this program; if not, write to the Free Software Foundation, Inc.,
+#	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#----------------------------------------------------------------------------
+
+# Console (common)
+:100		"A new release of Thinknowlogy is available at http://mafait.org."
+:101		"Enter a sentence comform the implemented grammar:"
+:102		"Press a button or enter a sentence comform the implemented grammar."
+:103		"Waiting for input"
+:104		"Waiting for secure input"
+:105		"Please wait for output... "
+:106		"You are logged in as "
+:107		"."
+:108		"You are already logged in as "
+:109		"."
+:110		"The user name or its password is not correct."
+
+# Console (status and progress)
+:200		"I am executing selections ("
+:201		")"
+#:202		"I am cleaning up deleted items"
+
+# Java console (upper menu)
+:300		"Clear your mind."
+:301		"Restart."
+:302		"Undo."
+:303		"Redo."
+:305		"Read the test-file "Regression"."
+:306		"<guided by grammar>"
+:307		"<more examples>"
+:308		"Read the file \""
+:309		"\"."
+
+# Java console (main menu)
+:310		"Read the file "ambiguity/Boston"."
+:311		"Read the file "ambiguity/presidents"."
+:312		"Read the file "programming/connect4"."
+:313		"Read the file "programming/greeting"."
+:314		"Read the file "programming/tower of Hanoi"."
+:315		"Read the file "reasoning/family"."
+:317		"<ambiguity>"
+:318		"<programming>"
+:319		"<reasoning>"
+:320		"<definitions>"
+:321		"<conflicts>"
+:322		"<justification>"
+:323		"<questions>"
+:324		"<show info>"
+:325		"<back>"
+:326		"Help."
+
+# Java console (initial submenu)
+:330		"These buttons are created for your convenience"
+:331		"to guide you through the demos and"
+:332		"to help you getting started."
+:333		"(The button text represents the actual sentence,"
+:334		"which is directly copied into the input field.)"
+
+# Java console (programming/connect4 submenu)
+:400		"My set is A."
+:401		"My set is B."
+:402		"My set is C."
+:403		"My set is D."
+:404		"My set is E."
+:405		"My set is F."
+:406		"My set is G."
+:407		"Show info about the set."
+:408		"The solve-level is low."
+:409		"The solve-level is high."
+
+# Java console (programming/tower of Hanoi submenu)
+:410		"Add D, C, B and A to the start-pole."
+:411		"Add E, D, C, B and A to the start-pole."
+
+# Java console (reasoning/family submenu)
+:500		"John is the father and Ann is the mother of Paul, Joe and Laura."
+:501		"Paul is a son."
+:502		"Joe is a son."
+:503		"Laura is a daughter."
+
+:504		"Paul is a son of John and Ann."
+:505		"Joe is a son of John and Ann."
+:506		"Laura is a daughter of John and Ann."
+
+:507		"John is a father."
+:508		"Ann is a mother."
+
+:509		"John is a parent."
+:510		"Ann is a parent."
+
+:511		"John is a man."
+:512		"Ann is a woman."
+:513		"Paul is a man."
+:514		"Joe is a man."
+:515		"Laura is a woman."
+
+# Java console (reasoning/family info submenu)
+:520		"Show info about John."
+:521		"Show info about Ann."
+:522		"Show info about Paul."
+:523		"Show info about Joe."
+:524		"Show info about Laura."
+
+# Java console (reasoning/family conflict submenu)
+:530		"John is a woman."
+:531		"John is the mother of Pete."
+:532		"Ann is a son."
+:533		"Paul is a daughter."
+:534		"Joe is a mother."
+
+# Java console (reasoning/family justification report submenu)
+:540		"Show the justification-report for parents."
+:541		"Show the justification-report for children."
+:542		"Show the justification-report for John."
+:543		"Show the justification-report for Ann."
+:544		"Show the justification-report for Paul."
+:545		"Show the justification-report for Joe."
+:546		"Show the justification-report for Laura."
+
+# Java console (reasoning/family question submenu)
+:550		"Is John a father?"
+:551		"Is John a mother?"
+:552		"Is John the father of Paul?"
+:553		"Is John the mother of Paul?"
+:554		"Is Paul a man?"
+:555		"Is Paul a woman?"
+:556		"Is Paul a man or a woman?"
+:557		"Is Paul a son?"
+:558		"Is Paul a daughter?"
+:559		"Is Paul a son or a daughter?"
+
+# Java console (help submenu)
+:602		"Show info about the lists."
+:604		"Show info about the word-types."
+:605		"Show the query-commands."
+:606		"Show the copyright."
+:607		"Show the GPLv2-license."
+:608		"Show the warranty."
+
+# Grammar
+:1000		"Grammar definition \""
+:1001		"\" in grammar file \""
+:1002		"\" is not used."
+:1003		"Word type definition number "
+:1004		" is missing in \""
+:1005		"Word type definition numbers "
+:1006		" to "
+:1007		" are missing in \""
+:1008		"\"."
+:1009		" [plural of '"
+:1010		"' is unknown]"
+
+# Query
+:1100		"No item was found meeting the given specification."
+:1101		"No reference item number was found meeting the given specification."
+:1102		"A character in the given list is invalid."
+:1103		"No list was found meeting the given specification."
+:1104		"No word was found meeting the given specification."
+:1105		"No word reference was found meeting the given specification."
+:1106		"No string was found meeting the given specification."
+:1107		"No word type was found meeting the given specification."
+:1108		"No parameter was found meeting the given specification."
+
+:1109		"No items were found meeting the given specification."
+:1110		"No words were found meeting the given specification."
+:1111		"No word references were found meeting the given specification."
+:1112		"No strings were found meeting the given specification."
+
+:1113		"An empty word specification is only usefull at the end of a query."
+:1114		"An empty word reference specification is only usefull at the end of a query."
+:1115		"An empty string specification is only usefull at the end of a query."
+
+:1199		"<query error>"
+
+# Imperative (notifications)
+:1200		"My mind is clear."
+:1201		"The previous sentence belongs to another user."
+:1202		"There are no sentences left to undo."
+:1203		"There are no sentences to redo."
+:1204		"I have undone sentence number "
+:1205		"I have redone the undone sentence number "
+:1206		"."
+:1207		"I don't have a "
+
+:1210		"I don't have any info about "
+:1211		"."
+:1212		"I don't know what to "
+:1213		"."
+:1214		"I don't know what to do with the given relation word(s)."
+:1215		"I don't know which file to read."
+:1216		"I could not find any selection containing information how to solve the "
+:1217		"."
+:1218		"This imperative needs a list to be specified."
+:1219		"I found a preposition word that is not used for this action."
+
+:1220		"The "
+:1221		" is already solved."
+
+# Listing (conflicts)
+:1300		"\nThis sentence is not accepted, because it is in conflict with itself."
+:1301		"\nThis question is not answered, because it is in conflict with itself."
+:1302		"\nThis sentence is not accepted, because it is in conflict with:"
+
+# Listing (justification report)
+:1310		" Because:"
+:1311		"\tand:"
+:1312		"\t- "
+
+# Listing (current information)
+:1320		"\nYour information:"
+:1321		"\nYour questions:"
+:1322		"\nMy conclusions:"
+:1323		"\nMy assumptions:"
+:1324		"\nMy assumptions that are adjusted:"
+:1325		"\nMy questions:"
+:1326		"\nMy adjusted questions:"
+:1327		"\nMy answer:"
+:1328		"\nI only know:"
+:1329		"\nI am not sure, but I assume:"
+:1330		"\nSpecifications:"
+:1331		"\nSpecification questions:"
+:1332		"\nRelated information:"
+:1333		"\nRelated questions:"
+
+# Listing (old information)
+:1340		"\nYou have confirmed the specification - but not the relation word(s) - of my earlier assumptions:"
+:1341		"\nYou have confirmed the specification - but not the relation word(s) - of my earlier conclusions:"
+:1342		"\nYou have confirmed the specification and at least one relation word of my earlier assumptions:"
+:1343		"\nYou have confirmed the specification and at least one relation word of my earlier conclusions:"
+:1344		"\nMy assumptions that are confirmed:"
+:1345		"\nMy conclusions that are confirmed:"
+:1346		"\nYour information is more specific than my earlier assumption:"
+:1347		"\nYour information is more specific than my earlier conclusion:"
+:1348		"\nYour question is more specific than my earlier question:"
+:1349		"\nThis information is more specific than your earlier information:"
+:1350		"\nThis question is more specific than your earlier question:"
+:1351		"\nYour questions that are answered:"
+:1352		"\nMy questions that are answered:"
+:1353		"\nMy earlier assumptions that are corrected by knowledge:"
+:1354		"\nMy earlier assumptions that are corrected by an opposite suggestive question:"
+
+# Response (questions)
+:1360		"\nYou had the same question before."
+:1361		"\nI had the same question before."
+:1362		"\nYou had a similar question before:"
+:1363		"\nI had a similar question before:"
+:1364		"\nYou had a related question before:"
+:1365		"\nI had a related question before:"
+:1366		"\nI don't know anything about "
+:1367		"."
+:1368		"\nThis question is already answered."
+:1369		"\nI'll answer your question as soon as I have enough information."
+
+# Sentence (notifications)
+:1400		"I know."
+:1401		"I noticed that word \""
+:1402		"\" is semantically ambiguous. There are multiple instances of this entity."
+:1403		"\" is semantically ambiguous:\n- either the entity reoccurred,\n- or there are multiple instances of this entity.\n\nIn the latter case, please enhance the specification of the involved entities."
+:1404		"I noticed that generalization word \""
+:1405		"\" is semantically ambiguous, due to specifcation word \""
+:1406		"\"."
+:1407		"I noticed your question is semantically ambiguous, because it is missing a relation specification."
+:1408		"I noticed this sentence is semantically ambiguous, because it is missing a relation specification."
+:1409		"I assume you mean:"
+
+# Sentence (warnings)
+:1410		"I don't understand this sentence. Please make sure to enter a sentence conform my limited grammar definition."
+:1411		"I don't understand the sentence from word at position "
+:1412		"I don't understand the sentence from word \""
+:1413		"Word \""
+:1414		"\" at position "
+:1415		"."
+:1416		" is only used in the condition of a selection."
+:1417		"I am currently unable to link 'yes' and 'no' answers to a question. Please repeat your sentence without this interjection."
+
+# Sentence (errors)
+:1420		"Integrity error! My implementation is insufficient to store or retrieve "
+:1421		"this sentence."
+:1422		"sentence \""
+:1423		"I retrieved from my system: \""
+:1424		"\"."

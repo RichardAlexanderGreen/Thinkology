@@ -1,0 +1,8 @@
+Read the file "reasoning/family".
+John is a parent.
+Ann is a parent.
+John is a father.
+Ann is a mother.
+Is John a father?
+Is Ann a father?
+# Remember to clear this knowledge before reading another example.

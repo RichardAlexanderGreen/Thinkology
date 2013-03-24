@@ -1,0 +1,3 @@
+Read the file "reasoning/family".
+Is Chris a man and a woman?
+# Remember to clear this knowledge before reading another example.

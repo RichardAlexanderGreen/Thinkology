@@ -1,0 +1,5 @@
+Read the file "reasoning/family".
+Paul is a son of John and Ann.
+Is John the father of Paul?
+Is George the father of Pete?
+# Remember to clear this knowledge before reading another example.

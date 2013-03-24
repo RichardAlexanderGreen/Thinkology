@@ -1,0 +1,34 @@
+Read the file "reasoning/family".
+Show info about parents.
+Show info about children.
+Show the justification-report for parents.
+Show the justification-report for children.
+John is the father and Ann is the mother of Paul, Joe and Laura.
+Show the justification-report for John.
+Show the justification-report for Ann.
+Show the justification-report for Paul.
+Show the justification-report for Joe.
+Show the justification-report for Laura.
+Paul is a son.
+Joe is a son.
+Show the justification-report for John.
+Show the justification-report for Ann.
+Show the justification-report for Paul.
+Show the justification-report for Joe.
+Show the justification-report for Laura.
+Laura is a daughter.
+Show info about John.
+Show info about Ann.
+Show info about Paul.
+Show info about Joe.
+Show info about Laura.
+Show info about parents.
+Show info about children.
+Show the justification-report for parents.
+Show the justification-report for children.
+Show the justification-report for John.
+Show the justification-report for Ann.
+Show the justification-report for Paul.
+Show the justification-report for Joe.
+Show the justification-report for Laura.
+# Remember to clear this knowledge before reading another example.

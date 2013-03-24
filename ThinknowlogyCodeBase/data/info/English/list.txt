@@ -1,0 +1,73 @@
+#
+#	File:		list.txt
+#	Scope:		Used by the Thinknowlogy application
+#	Purpose:	To show the list information in the English language
+#	Version:	Thinknowlogy 2012 (release 2)
+#----------------------------------------------------------------------------
+#	Thinknowlogy is grammar-based software,
+#	designed to utilize the intelligence contained within grammar,
+#	in order to create intelligence through natural language in software,
+#	which is demonstrated by:
+#	- Programming in natural language;
+#	- Reasoning in natural language:
+#		- drawing conclusions,
+#		- making assumptions (with self-adjusting level of uncertainty),
+#		- asking questions about gaps in the knowledge,
+#		- detecting conflicts in the knowledge;
+#	- Detection of semantic ambiguity (static as well as dynamic);
+#	- Intelligent answering of "is" questions (by providing alternatives).
+#----------------------------------------------------------------------------
+#	Copyright (C) 2009-2012, Menno Mafait
+#
+#	Your additions, modifications, suggestions and bug reports
+#	are welcome at http://mafait.org
+#----------------------------------------------------------------------------
+#	This program is free software: you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation, either version 2 of the License, or
+#	(at your option) any later version.
+#
+#	This program is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License along
+#	with this program; if not, write to the Free Software Foundation, Inc.,
+#	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#----------------------------------------------------------------------------
+
+"-----------------------------------------------------------------------------".
+"Total number of items: ~#<>~.".
+"-----------------------------------------------------------------------------".
+"Items in administrator:\t~#<FRSWXYZ>~.".
+"-----------------------------------------------------------------------------".
+" * Active items:\t\t\t~!#<FRSWXYZ>~.".
+"    <F> Files:\t\t\t\t~!#<F>~.".
+"    <R> Temporary read words:\t\t\t~!#<R>~.".
+"    <S> Temporary solve scores:\t\t~!#<S>~.".
+"    <W> Words:\t\t\t\t~!#<W>~,\t(predefined: ~!#<W>:*~).".
+"    <X> Conditions:\t\t\t\t~!#<X>~.".
+"    <Y> Actions:\t\t\t\t~!#<Y>~.".
+"    <Z> Alternatives:\t\t\t\t~!#<Z>~.".
+" * Deactive items:\t\t\t~*#<FRSWXYZ>~.".
+" * Archived items:\t\t\t~$#<FRSWXYZ>~.".
+" * Deleted items:\t\t\t~&#<FRSWXYZ>~.".
+"-----------------------------------------------------------------------------".
+"Items in words:\t\t~#<acgijlrswx>~.".
+"-----------------------------------------------------------------------------".
+" * Active items:\t\t\t~!#<acgijlsrwx>~.".
+"    <a> assignments:\t\t\t\t~!#<a>~.".
+"    <c> collections:\t\t\t\t~!#<c>~.".
+"    <g> generalizations:\t\t\t~!#<g>~.".
+"    <i> interface language:\t\t\t~!#<i>~.".
+"    <j> justification:\t\t\t~!#<j>~.".
+"    <l> grammar language:\t\t\t~!#<l>~.".
+"    <s> specifications:\t\t\t~!#<s>~.".
+"    <r> temporary write words:\t\t~!#<r>~.".
+"    <w> word types:\t\t\t\t~!#<w>~.".
+"    <x> context:\t\t\t\t~!#<x>~.".
+" * Deactive items:\t\t\t~*#<acgijlsrwx>~.".
+" * Archived items:\t\t\t~$#<acgijlsrwx>~.".
+" * Deleted items:\t\t\t~&#<acgijlsrwx>~.".
+"-----------------------------------------------------------------------------".

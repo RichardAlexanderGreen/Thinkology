@@ -1,0 +1,4 @@
+Read the file "programming/connect4".
+The solve-level is high.
+My set is D.
+# Remember to clear this knowledge before reading another example.

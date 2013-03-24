@@ -1,0 +1,11 @@
+Read the file "reasoning/family".
+Is John a father?
+Is Ann a father or a mother?
+Is Paul a son?
+Is Laura a daughter?
+Is John a father?
+Is John a father or a mother?
+Is Ann a father or a mother?
+Is Paul a son or a daughter?
+Is Laura a son or a daughter?
+# Remember to clear this knowledge before reading another example.

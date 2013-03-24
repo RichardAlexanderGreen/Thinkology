@@ -1,0 +1,4 @@
+Read the file "reasoning/family".
+Joe is a son of John and Ann.
+# Remember to clear this knowledge before reading another example.
+Joe is a mother.

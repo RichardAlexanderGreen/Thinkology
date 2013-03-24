@@ -1,0 +1,73 @@
+------------------------------------------------
+Thinknowlogy (Thinking - Knowledge - Technology)
+------------------------------------------------
+
+Thinknowlogy is grammar-based software,
+designed to utilize the intelligence contained within grammar,
+in order to create intelligence through natural language in software,
+which is demonstrated by:
+* Programming in natural language;
+* Reasoning in natural language:
+	* drawing conclusions,
+	* making assumptions (with self-adjusting level of uncertainty),
+	* asking questions about gaps in the knowledge,
+	* detecting conflicts in the knowledge;
+* Detection of semantic ambiguity (static as well as dynamic);
+* Intelligent answering of "is" questions (by providing alternatives).
+
+-------------
+How to start:
+-------------
+When stil packed, unpack the .zip file first in a directory of your choice.
+
+The application comes in two interface types: Java GUI and console interface.
+The source code of both versions (Java and C++) is included.
+Both applications are almost equal in functionality.
+The choice is yours to use either of them:
+
+Thinknowlogy2012r2 in Java.jar
+------------------------------
+- Java archive, will run on almost any system having Java(TM) 6 or 7 installed;
+- This is the more user-friendly version, because handy demo buttons will guide you.
+
+Thinknowlogy2012r2 in C++.exe
+-----------------------------
+- Console interface;
+- When using this executable you need to type the sentences by yourself;
+- See the included screenshots for guidance about the accepted grammar;
+- The example files can be found in the examples subdirectory.
+
+
+------------------
+Technical details:
+------------------
+The Java archive:
+- is build from the Java source files by Eclipse (Juno SR1);
+- needs Java(TM) Runtime Environment 6 or 7 to be installed;
+- is tested under Windows XP Home Edition SP3 - using Java 7 Runtime (update 7);
+- is tested under Linux (Ubuntu 12.04) - using OpenJDK 7.
+
+The C++ executable:
+- is compilable by Code::Blocks 10.05;
+- is build from the C++ source files using Visual C++ 2010 Express SP1;
+  (see the included build log for the settings);
+- is tested under Windows XP Home Edition SP3;
+- is tested under Linux (Ubuntu 12.04) - using Wine.
+
+
+-------------
+Known issues:
+-------------
+- The Java console should have been build using a Model-View-Controller structure;
+- The knowledge structure is only created in the work memory of the computer.
+  However, a database interface should be added to store the knowledge in a database;
+- Under Linux the extraction of some theory directories and files may fail during
+  the extraction of this zip-file - due to language specific characters in the
+  names. Work-around: Download these files separate from http://mafait.org
+ (see: either the design menu or the download page in the English language).
+
+
+Enjoy playing around with this application, be brave enough to read the analysis and
+design papers and have a peek in the source code. And above all: have fun!
+
+Menno Mafait.

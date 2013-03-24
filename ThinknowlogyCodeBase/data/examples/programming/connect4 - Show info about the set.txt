@@ -1,0 +1,10 @@
+Read the file "programming/connect4".
+My set is D.
+Show info about the set.
+My set is D.
+My set is D.
+My set is D.
+My set is C.
+My set is A.
+Show info about the set.
+# Remember to clear this knowledge before reading another example.

@@ -1,0 +1,10 @@
+Changes in Thinknowlogy 2012 (release 2) compared to Thinknowlogy 2012 (release 1):
+- Bug fixes;
+- Added detection of Semantical Ambiguity (static as well as dynamic);
+- Slightly improved question answering (of "is" answering);
+- Slightly improved processing of personal pronouns;
+- Improved notifications in the Connect-Four game;
+- Improved reasoning:
+	- Drawing Conclusions on possessive sentences;
+	- and making more Assumptions on generalizations.
+	Both result in improved justification reports.

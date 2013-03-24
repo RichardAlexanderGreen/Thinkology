@@ -1,0 +1,9 @@
+John is the father and Ann is the mother of Paul, Joe and Laura.
+Show the justification-report for Paul.
+Paul has a father, called John.
+Show the justification-report for Paul.
+Joe has a father, called John.
+Show the justification-report for Joe.
+Laura has a father, called John.
+Show the justification-report for Laura.
+# Remember to clear this knowledge before reading another example.

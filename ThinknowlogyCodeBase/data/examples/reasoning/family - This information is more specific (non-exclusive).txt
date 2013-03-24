@@ -1,0 +1,6 @@
+Read the file "reasoning/family".
+Chris is a father or a mother.
+Show the justification-report for Chris.
+Chris is a father.
+Show the justification-report for Chris.
+# Remember to clear this knowledge before reading another example.

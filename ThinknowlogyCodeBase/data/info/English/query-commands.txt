@@ -1,0 +1,75 @@
+#
+#	File:		query.txt
+#	Scope:		Used by the Thinknowlogy application
+#	Purpose:	To show the query commands in the English language
+#	Version:	Thinknowlogy 2012 (release 2)
+#----------------------------------------------------------------------------
+#	Thinknowlogy is grammar-based software,
+#	designed to utilize the intelligence contained within grammar,
+#	in order to create intelligence through natural language in software,
+#	which is demonstrated by:
+#	- Programming in natural language;
+#	- Reasoning in natural language:
+#		- drawing conclusions,
+#		- making assumptions (with self-adjusting level of uncertainty),
+#		- asking questions about gaps in the knowledge,
+#		- detecting conflicts in the knowledge;
+#	- Detection of semantic ambiguity (static as well as dynamic);
+#	- Intelligent answering of "is" questions (by providing alternatives).
+#----------------------------------------------------------------------------
+#	Copyright (C) 2009-2012, Menno Mafait
+#
+#	Your additions, modifications, suggestions and bug reports
+#	are welcome at http://mafait.org
+#----------------------------------------------------------------------------
+#	This program is free software: you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation, either version 2 of the License, or
+#	(at your option) any later version.
+#
+#	This program is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License along
+#	with this program; if not, write to the Free Software Foundation, Inc.,
+#	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#----------------------------------------------------------------------------
+
+"-----------------------------------------------------------------------------".
+"The available query commands are:".
+"-----------------------------------------------------------------------------".
+"\~(sentenceNr)\t\titem identification\t\texample: \~(123)".
+"\~(sentenceNr,itemNr)\titem identification\t\texample: \~(123,1)".
+"\~(,itemNr)\t\titem identification\t\texample: \~(,3)".
+"\~[sentenceNr]\t\treference to item id.\t\texample: \~[123]".
+"\~[sentenceNr,itemNr]\treference to item id.\t\texample: \~[123,1]".
+"\~[,itemNr]\t\treference to item id.\t\texample: \~[,3]".
+"\~<adminListChar>\tadministrator list\t\texample: \~<W>".
+"\~<wordListChar>\tword list\t\t\texample: \~<w>".
+"\~<listCharlistChar>\tmultiple lists\t\t\texample: \~<Xas>".
+"\~'word'\t\tword\t\t\t\texample: \~'English'".
+"\~`wordReference`\treference to word\t\texample: \~`English`".
+"\~\"textString\"\t\ttext string\t\t\texample: \~\"sentence\"".
+"-----------------------------------------------------------------------------".
+"Both wild cards '?' and '*' can be used in:".
+"\t\t\t* words\t\t\t\texample: \~'Engl?sh'".
+"\t\t\t* references to a word\t\texample: \~`Eng*sh`".
+"\t\t\t* text strings\t\t\texample: \~\"gr?m*\"".
+"-----------------------------------------------------------------------------".
+"Empty item specification will show all items\t\texample: \~()".
+"Empty list specification will show all items\t\texample: \~<>".
+"-----------------------------------------------------------------------------".
+"Adding #' gives count functionality,\t\t\texample: \~#(123)".
+"Concatenation of queries gives 'AND' functionality\texample: \~(123)<s>".
+"-----------------------------------------------------------------------------".
+"Adding ' at the end will show only words\t\texample: \~(123)'".
+"Adding ` at the end shows only word references\texample: \~(123)`".
+"Adding \" at the end will show only text strings\texample: \~(123)\"".
+"Adding '' shows only words on new line\t\texample: \~(123)''".
+"Adding `` shows only word references on new line\texample: \~(123)``".
+"Adding \"\" shows only text strings on new line\t\texample: \~(123)\"\"".
+"-----------------------------------------------------------------------------".
+"In files '\~' will mark the end of a query\t\texample: ...\~#<W>\~...".
+"-----------------------------------------------------------------------------".

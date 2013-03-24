@@ -1,0 +1,29 @@
+Read the file "reasoning/family".
+Paul is a son of John and Ann.
+Joe is a son of John and Ann.
+Laura is a daughter of John and Ann.
+Show the justification-report for Paul.
+Paul is a person.
+Show the justification-report for Paul.
+Show the justification-report for John.
+Show the justification-report for Ann.
+Show the justification-report for Joe.
+Joe is a child of John and Ann.
+Show the justification-report for Joe.
+Show the justification-report for John.
+Show the justification-report for Ann.
+Show the justification-report for Laura.
+Laura is a child.
+Show the justification-report for Laura.
+Show the justification-report for John.
+Show the justification-report for Ann.
+Laura is a child of John and Ann.
+Show the justification-report for Laura.
+Show the justification-report for John.
+Show the justification-report for Ann.
+Show the justification-report for Paul.
+Paul is a child of John and Ann.
+Show the justification-report for Paul.
+Show the justification-report for John.
+Show the justification-report for Ann.
+# Remember to clear this knowledge before reading another example.

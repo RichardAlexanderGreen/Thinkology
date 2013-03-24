@@ -1,0 +1,4 @@
+A parent is a father or a mother.
+A father is a man.
+A mother is a woman.
+# Remember to clear this knowledge before reading another example.

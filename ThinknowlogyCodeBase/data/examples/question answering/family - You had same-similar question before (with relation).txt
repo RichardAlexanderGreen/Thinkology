@@ -1,0 +1,9 @@
+Read the file "reasoning/family".
+John is the father and Ann is the mother of Paul, Joe and Laura.
+Is John the mother?
+Is John a mother?
+Is John a father?
+Is John the father of Paul?
+Is Ann the mother of Laura?
+Is Ann the father of Laura?
+# Remember to clear this knowledge before reading another example.

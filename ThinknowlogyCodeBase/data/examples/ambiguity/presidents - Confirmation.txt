@@ -1,0 +1,18 @@
+# In the year 2000 George W. Bush was elected as president of the United States.
+Bush is the president of the United-States.
+
+# Eight years later Obama was elected as president.
+Obama is the president of the United-States.
+
+Show the justification-report for the United-States.
+The United-States has a previous president, called Bush.
+
+Show the justification-report for the United-States.
+The United-States has a president, called Obama.
+
+Show info about the presidents.
+Show info about Bush.
+Show info about Obama.
+# There will be no justification report, because the conclusions are confirmed
+Show the justification-report for the United-States.
+# Remember to clear this knowledge before reading another example.
