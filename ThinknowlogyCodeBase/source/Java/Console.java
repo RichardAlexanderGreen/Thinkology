@@ -413,19 +413,24 @@ class Console extends JPanel implements ActionListener, ComponentListener
 			readTheFileReasoningFamilyButton_.setEnabled( isSelectedReasoningFamily_ ? false : enabledNormalButtons );
 			readTheFileReasoningFamilyButton_.setVisible( true );
 
-			familyDefinitionsSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_DEFINITIONS ? enabledNormalButtons : false );
+			familyDefinitionsSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_DEFINITIONS 
+															? enabledNormalButtons : false );
 			familyDefinitionsSubMenuButton_.setVisible( isSelectedReasoningFamily_ );
 
-			familyConflictsSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_CONFLICTS ? enabledNormalButtons : false );
+			familyConflictsSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_CONFLICTS 
+															? enabledNormalButtons : false );
 			familyConflictsSubMenuButton_.setVisible( isSelectedReasoningFamily_ );
 
-			familyJustificationSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_JUSTIFICATION_REPORT ? enabledNormalButtons : false );
+			familyJustificationSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_JUSTIFICATION_REPORT 
+															? enabledNormalButtons : false );
 			familyJustificationSubMenuButton_.setVisible( isSelectedReasoningFamily_ );
 
-			familyQuestionsSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_QUESTIONS ? enabledNormalButtons : false );
+			familyQuestionsSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_QUESTIONS 
+															? enabledNormalButtons : false );
 			familyQuestionsSubMenuButton_.setVisible( isSelectedReasoningFamily_ );
 
-			familyShowInfoSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_SHOW_INFO ? enabledNormalButtons : false );
+			familyShowInfoSubMenuButton_.setEnabled( isSelectedReasoningFamily_ && currentSubMenu_ != Constants.CONSOLE_SUBMENU_REASONING_FAMILY_SHOW_INFO 
+															? enabledNormalButtons : false );
 			familyShowInfoSubMenuButton_.setVisible( isSelectedReasoningFamily_ );
 		}
 		else
@@ -609,6 +614,8 @@ class Console extends JPanel implements ActionListener, ComponentListener
 		// Create scroll pane with border for output area
 		outputScrollPane_ = new JScrollPane( outputArea_ );
 		outputScrollPane_.setVerticalScrollBarPolicy( JScrollPane.VERTICAL_SCROLLBAR_ALWAYS );
+		
+		// TODO: Following pattern occurs five times here. Create a helper that does this sizing to a JPanel to replace it.
 		outputScrollPane_.setPreferredSize( new Dimension( 0, frameSize.getSize().height - ( 4 * Constants.CONSOLE_BUTTON_PANE_HEIGHT + 2 * 5 * Constants.CONSOLE_BORDER_SIZE ) ) );
 		outputScrollPane_.setBorder(
 				BorderFactory.createCompoundBorder(
@@ -926,7 +933,12 @@ class Console extends JPanel implements ActionListener, ComponentListener
 			errorTextArea.setEditable( false );
 			JScrollPane errorScrollPane = new JScrollPane( errorTextArea );
 			errorScrollPane.setPreferredSize( new Dimension( Constants.CONSOLE_ERROR_PANE_WIDTH, Constants.CONSOLE_ERROR_PANE_HEIGHT ) );
-			JOptionPane.showMessageDialog( null, errorScrollPane, ( errorHeaderString_ == null ? Constants.PRESENTATION_ERROR_INTERNAL_TITLE_STRING : Constants.PRESENTATION_ERROR_INTERNAL_TITLE_STRING + errorHeaderString_ ), JOptionPane.ERROR_MESSAGE );
+			JOptionPane.showMessageDialog( null
+											, errorScrollPane
+											, ( errorHeaderString_ == null 
+												? Constants.PRESENTATION_ERROR_INTERNAL_TITLE_STRING 
+												: Constants.PRESENTATION_ERROR_INTERNAL_TITLE_STRING + errorHeaderString_ )
+											, JOptionPane.ERROR_MESSAGE );
 			errorHeaderString_ = null;
 			errorStringBuffer_ = null;
 		}
@@ -1027,11 +1039,11 @@ class Console extends JPanel implements ActionListener, ComponentListener
 		Object actionSource;
 		String actionCommandString;
 
-		if( currentInterfaceLanguageWordItem_ != null )
+		if( currentInterfaceLanguageWordItem_ != null )  // TODO: Change this to an assert
 		{
-			// TODO: MAKE THIS A CASE STATEMENT.
+			// TODO: MAKE THIS if-cascade into A CASE STATEMENT.
 			
-			if( ( actionSource = actionEvent.getSource() ) != null )
+			if( ( actionSource = actionEvent.getSource() ) != null )   // TODO: Change this to an assert
 			{
 				if( ( actionCommandString = actionEvent.getActionCommand() ) != null )
 				{
@@ -1048,7 +1060,7 @@ class Console extends JPanel implements ActionListener, ComponentListener
 						{
 							if( actionSource == clearYourMindButton_ )
 							{
-								isSelectedAmbiguityBoston_ = false;
+								isSelectedAmbiguityBoston_     = false;       // TODO: Can we externalize this list?
 								isSelectedAmbiguityPresidents_ = false;
 								isSelectedProgrammingConnect4_ = false;
 								isSelectedProgrammingGreeting_ = false;
@@ -1073,7 +1085,11 @@ class Console extends JPanel implements ActionListener, ComponentListener
 										if( fileChooser_.showOpenDialog( this ) == JFileChooser.APPROVE_OPTION &&
 										fileChooser_.getSelectedFile() != null &&
 										fileChooser_.getSelectedFile().getPath() != null )
-											inputString_ = Presentation.convertDiacriticalText( currentInterfaceLanguageWordItem_.interfaceString( Constants.INTERFACE_CONSOLE_READ_FILE_ACTION_START ) ) + fileChooser_.getSelectedFile().getPath() + Presentation.convertDiacriticalText( currentInterfaceLanguageWordItem_.interfaceString( Constants.INTERFACE_CONSOLE_READ_FILE_ACTION_END ) );
+											inputString_ =    Presentation.convertDiacriticalText( 
+																			currentInterfaceLanguageWordItem_.interfaceString( Constants.INTERFACE_CONSOLE_READ_FILE_ACTION_START )  ) 
+															+ fileChooser_.getSelectedFile().getPath() 
+															+ Presentation.convertDiacriticalText( 
+																			currentInterfaceLanguageWordItem_.interfaceString( Constants.INTERFACE_CONSOLE_READ_FILE_ACTION_END ) );
 										else
 										{
 											// When canceled
@@ -1108,7 +1124,12 @@ class Console extends JPanel implements ActionListener, ComponentListener
 												{
 													if( actionSource == programmingSubMenuButton_ )
 													{
-														setSubMenuVisible( false, ( isSelectedProgrammingConnect4_ ? Constants.CONSOLE_SUBMENU_PROGRAMMING_CONNECT4 : Constants.CONSOLE_SUBMENU_PROGRAMMING ) );
+														setSubMenuVisible( false
+																			, ( isSelectedProgrammingConnect4_ 
+																				? Constants.CONSOLE_SUBMENU_PROGRAMMING_CONNECT4 
+																				: Constants.CONSOLE_SUBMENU_PROGRAMMING 
+																				) 
+																			);
 														enableMenus( true, true );
 													}
 													else
@@ -1139,7 +1160,12 @@ class Console extends JPanel implements ActionListener, ComponentListener
 																{
 																	if( actionSource == reasoningSubMenuButton_ )
 																	{
-																		setSubMenuVisible( false, ( isSelectedReasoningFamily_ ? Constants.CONSOLE_SUBMENU_REASONING_FAMILY_DEFINITIONS : Constants.CONSOLE_SUBMENU_REASONING ) );
+																		setSubMenuVisible( false
+																							, ( isSelectedReasoningFamily_ 
+																								? Constants.CONSOLE_SUBMENU_REASONING_FAMILY_DEFINITIONS 
+																								: Constants.CONSOLE_SUBMENU_REASONING 
+																								) 
+																						  );
 																		enableMenus( true, true );
 																	}
 																	else
@@ -1220,7 +1246,8 @@ class Console extends JPanel implements ActionListener, ComponentListener
 								}
 							}
 						}
-
+						// TODO: Add this to the case statement (TBD) above (invert the if-logic)
+						// Warning: Looks like inputField_ or restartButton_ might depend on inputString being not null.
 						if( inputString_ != null )
 						{
 							if( actionSource != inputField_ )
@@ -1233,19 +1260,19 @@ class Console extends JPanel implements ActionListener, ComponentListener
 				}
 				else
 				{
-					addError( "Class Console;\nMethod: actionPerformed;\nError: The action command string is undefined." );
+					addError( "Class Console;\nMethod: actionPerformed;\nError: The action command string is undefined." ); // TODO: Change this to an assert -- PRECONDITION
 					showError();
 				}
 			}
 			else
 			{
-				addError( "Class Console;\nMethod: actionPerformed;\nError: The action source is undefined." );
+				addError( "Class Console;\nMethod: actionPerformed;\nError: The action source is undefined." );  			// TODO: Change this to an assert -- PRECONDITION
 				showError();
 			}
 		}
 		else
 		{
-			addError( "Class Console;\nMethod: actionPerformed;\nError: The current interface language word is undefined." );
+			addError( "Class Console;\nMethod: actionPerformed;\nError: The current interface language word is undefined." );  // TODO: Change this to an assert -- PRECONDITION
 			showError();
 		}
 	}
